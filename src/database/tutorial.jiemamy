@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jiemamy xmlns="http://jiemamy.org/xml/ns/core" version="0.3.0-SNAPSHOT">
+  <metadata class="org.jiemamy.DefaultContextMetadata">
+    <dialect>org.jiemamy.dialect.postgresql.PostgresqlDialect</dialect>
+    <schemaName/>
+    <description/>
+  </metadata>
+  <dbobjects>
+    <table id="0687b1cc-424c-4c05-8173-b8ce53484bcf" class="org.jiemamy.model.table.DefaultTableModel">
+      <name>T_ITEM</name>
+      <logicalName/>
+      <description/>
+      <columns>
+        <column id="da448863-5585-4bed-98b5-89234269495d" class="org.jiemamy.model.column.DefaultColumnModel">
+          <name>ID</name>
+          <logicalName/>
+          <description/>
+          <dataType class="org.jiemamy.model.datatype.DefaultDataType">
+            <typeCategory>INTEGER</typeCategory>
+            <typeName>INTEGER</typeName>
+            <parameters>
+              <parameter key="serial">true</parameter>
+            </parameters>
+          </dataType>
+          <defaultValue/>
+        </column>
+        <column id="f83ee0be-27ea-4c25-aff5-36b60185eaea" class="org.jiemamy.model.column.DefaultColumnModel">
+          <name>ITEM_NAME</name>
+          <logicalName/>
+          <description/>
+          <dataType class="org.jiemamy.model.datatype.DefaultDataType">
+            <typeCategory>VARCHAR</typeCategory>
+            <typeName>VARCHAR</typeName>
+            <parameters>
+              <parameter key="size">64</parameter>
+            </parameters>
+          </dataType>
+          <defaultValue/>
+        </column>
+        <column id="5aef45b3-891c-4560-83d2-a6adb98617e9" class="org.jiemamy.model.column.DefaultColumnModel">
+          <name>PRICE</name>
+          <logicalName/>
+          <description/>
+          <dataType class="org.jiemamy.model.datatype.DefaultDataType">
+            <typeCategory>INTEGER</typeCategory>
+            <typeName>INTEGER</typeName>
+            <parameters>
+              <parameter key="serial">false</parameter>
+            </parameters>
+          </dataType>
+          <defaultValue/>
+        </column>
+      </columns>
+      <constraints>
+        <primaryKey id="2aa55970-52be-43d3-902f-fe83e144e086" class="org.jiemamy.model.constraint.DefaultPrimaryKeyConstraintModel">
+          <keyColumns>
+            <columnRef ref="da448863-5585-4bed-98b5-89234269495d"/>
+          </keyColumns>
+        </primaryKey>
+        <notNull id="8baa28ef-a8e5-44e9-a99d-b7b2f8aab568" class="org.jiemamy.model.constraint.DefaultNotNullConstraintModel">
+          <columnRef ref="5aef45b3-891c-4560-83d2-a6adb98617e9"/>
+        </notNull>
+        <notNull id="3856e74f-7980-43a2-81b8-b6613e987190" class="org.jiemamy.model.constraint.DefaultNotNullConstraintModel">
+          <columnRef ref="f83ee0be-27ea-4c25-aff5-36b60185eaea"/>
+        </notNull>
+      </constraints>
+    </table>
+  </dbobjects>
+  <dataSets>
+    <dataSet id="a0a24c9b-4125-4bbc-8420-8eac914a9dba" class="org.jiemamy.model.dataset.DefaultDataSetModel">
+      <name>DATASET_1</name>
+      <tableRecords>
+        <tableRecord ref="0687b1cc-424c-4c05-8173-b8ce53484bcf">
+          <!-- TableName: T_ITEM -->
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">1</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Garnet</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">3000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">2</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Amethyst</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">1000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">3</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Aquamarine</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">10000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">4</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Diamond</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">700000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">5</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Emerald</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">100000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">6</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Pearls</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">60000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">7</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Ruby</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">60000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">8</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Peridot</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">2000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">9</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Sapphire</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">10000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">10</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Opal</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">30000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">11</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Topaz</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">16000</record>
+          </records>
+          <records class="org.jiemamy.model.dataset.DefaultRecordModel">
+            <!-- ColumnName: ID -->
+            <record ref="da448863-5585-4bed-98b5-89234269495d" engine="org.jiemamy.script.PlainScriptEngine">12</record>
+            <!-- ColumnName: ITEM_NAME -->
+            <record ref="f83ee0be-27ea-4c25-aff5-36b60185eaea" engine="org.jiemamy.script.PlainScriptEngine">Turquoise</record>
+            <!-- ColumnName: PRICE -->
+            <record ref="5aef45b3-891c-4560-83d2-a6adb98617e9" engine="org.jiemamy.script.PlainScriptEngine">400</record>
+          </records>
+        </tableRecord>
+      </tableRecords>
+    </dataSet>
+  </dataSets>
+  <sql:sqls xmlns:sql="http://jiemamy.org/xml/ns/sql"/>
+  <diagram:diagrams xmlns:diagram="http://jiemamy.org/xml/ns/diagram">
+    <diagram:diagram id="da11b757-3b82-49e4-8b1a-741112c602df" class="org.jiemamy.model.DefaultDiagramModel">
+      <diagram:name>default</diagram:name>
+      <diagram:level>ATTRTYPE</diagram:level>
+      <diagram:mode>PHYSICAL</diagram:mode>
+      <diagram:nodes>
+        <diagram:node id="51ed0266-6cf5-4f0f-bcc8-d9c81a5ae719" class="org.jiemamy.model.DefaultDatabaseObjectNodeModel">
+          <diagram:core ref="0687b1cc-424c-4c05-8173-b8ce53484bcf"/>
+          <diagram:boundary x="121" y="64" width="-1" height="-1"/>
+        </diagram:node>
+      </diagram:nodes>
+      <diagram:connections/>
+    </diagram:diagram>
+  </diagram:diagrams>
+</jiemamy>
