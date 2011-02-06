@@ -32,6 +32,50 @@
         <groupId>org.mortbay.jetty</groupId>
         <artifactId>maven-jetty-plugin</artifactId>
       </plugin>
+      <plugin>
+        <!-- jiemamyプラグインの設定 -->
+        <!--   cleanゴール = DB上に存在するエンティティ等を全削除する -->
+        <!--   jiemamyゴール = データファイルからSQLを生成する -->
+        <groupId>org.jiemamy</groupId>
+        <artifactId>maven-jiemamy-plugin</artifactId>
+        <version>${project.version}</version>
+        <configuration>
+          <!-- jiemamy:clean用設定 -->
+          <username>${database.username}</username>
+          <password>${database.password}</password>
+          <driver>${database.driver}</driver>
+          <uri>${database.uri}</uri>
+          <!-- jiemamy:export用設定 -->
+          <inputFile>./src/database/tutorial.jiemamy</inputFile>
+          <parameter>
+            <outputFile>./target/jiemamy.sql</outputFile>
+            <drop>false</drop>
+            <schema>false</schema>
+            <overwrite>true</overwrite>
+            <dataSetIndex>0</dataSetIndex>
+          </parameter>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>export</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.jiemamy</groupId>
+            <artifactId>jiemamy-dialect-postgresql</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>8.3-603.jdbc3</version>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
   </build>
   <profiles>
@@ -39,50 +83,6 @@
       <id>maintenanceDb</id>
       <build>
         <plugins>
-          <plugin>
-            <!-- jiemamyプラグインの設定 -->
-            <!--   cleanゴール = DB上に存在するエンティティ等を全削除する -->
-            <!--   jiemamyゴール = データファイルからSQLを生成する -->
-            <groupId>org.jiemamy</groupId>
-            <artifactId>maven-jiemamy-plugin</artifactId>
-            <version>${project.version}</version>
-            <configuration>
-              <!-- jiemamy:clean用設定 -->
-              <username>${database.username}</username>
-              <password>${database.password}</password>
-              <driver>${database.driver}</driver>
-              <uri>${database.uri}</uri>
-              <!-- jiemamy:export用設定 -->
-              <inputFile>./src/database/tutorial.jiemamy</inputFile>
-              <parameter>
-                <outputFile>./target/jiemamy.sql</outputFile>
-                <drop>false</drop>
-                <schema>false</schema>
-                <overwrite>true</overwrite>
-                <dataSetIndex>0</dataSetIndex>
-              </parameter>
-            </configuration>
-            <executions>
-              <execution>
-                <phase>generate-resources</phase>
-                <goals>
-                  <goal>export</goal>
-                </goals>
-              </execution>
-            </executions>
-            <dependencies>
-              <dependency>
-                <groupId>org.jiemamy</groupId>
-                <artifactId>jiemamy-dialect-postgresql</artifactId>
-                <version>${project.version}</version>
-              </dependency>
-              <dependency>
-                <groupId>postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>8.3-603.jdbc3</version>
-              </dependency>
-            </dependencies>
-          </plugin>
           <plugin>
             <!-- sqlプラグインの設定（生成されたSQLを実行） -->
             <groupId>org.codehaus.mojo</groupId>
@@ -164,9 +164,12 @@
   </dependencies>
   <properties>
     <jetty.version>6.1.4</jetty.version>
-    <database.username>postgres</database.username>
-    <database.password>postgres</database.password>
+    <database.username>jiemamy01</database.username>
+    <database.password>`eC_W.1X</database.password>
     <database.driver>org.postgresql.Driver</database.driver>
+    <database.uri>jdbc:postgresql://griffon.jiemamy.org:5432/jiemamy01</database.uri>
+    <!--
     <database.uri>jdbc:postgresql://localhost:5432/jiemamy</database.uri>
+    -->
   </properties>
 </project>
