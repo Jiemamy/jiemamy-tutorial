@@ -40,19 +40,26 @@
         <artifactId>maven-jiemamy-plugin</artifactId>
         <version>${project.version}</version>
         <configuration>
-          <!-- jiemamy:clean用設定 -->
-          <username>${database.username}</username>
-          <password>${database.password}</password>
+          <!-- 共通設定 -->
           <driver>${database.driver}</driver>
           <uri>${database.uri}</uri>
-          <!-- jiemamy:export用設定 -->
+          <username>${database.username}</username>
+          <password>${database.password}</password>
+          <!-- jiemamy:export / jiemamy:execute用設定 -->
           <inputFile>./src/database/tutorial.jiemamy</inputFile>
+          <!-- jiemamy:execute用設定 -->
+          <emitDropStatements>false</emitDropStatements>
+          <emitCreateSchemaStatement>false</emitCreateSchemaStatement>
+          <dataSetIndex>0</dataSetIndex>
+          <!-- jiemamy:import用設定 -->
+          <dialect>org.jiemamy.dialect.postgresql.PostgresqlDialect</dialect>
+          <!-- jiemamy:export用設定 -->
           <parameter>
-            <outputFile>./target/jiemamy.sql</outputFile>
-            <drop>false</drop>
-            <schema>false</schema>
-            <overwrite>true</overwrite>
+            <emitDropStatements>false</emitDropStatements>
+            <createSchema>false</createSchema>
             <dataSetIndex>0</dataSetIndex>
+            <outputFile>./target/jiemamy.sql</outputFile>
+            <overwrite>true</overwrite>
           </parameter>
         </configuration>
         <executions>
@@ -78,47 +85,6 @@
       </plugin>
     </plugins>
   </build>
-  <profiles>
-    <profile>
-      <id>maintenanceDb</id>
-      <build>
-        <plugins>
-          <plugin>
-            <!-- sqlプラグインの設定（生成されたSQLを実行） -->
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>sql-maven-plugin</artifactId>
-            <configuration>
-              <autocommit>true</autocommit>
-              <srcFiles>
-                <srcFile>./target/jiemamy.sql</srcFile>
-              </srcFiles>
-              <username>${database.username}</username>
-              <password>${database.password}</password>
-              <settingsKeys>sensibleKey</settingsKeys>
-              <driver>${database.driver}</driver>
-              <url>${database.uri}</url>
-              <skip>${maven.test.skip}</skip>
-            </configuration>
-            <executions>
-              <execution>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>execute</goal>
-                </goals>
-              </execution>
-            </executions>
-            <dependencies>
-              <dependency>
-                <groupId>postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>8.3-603.jdbc3</version>
-              </dependency>
-            </dependencies>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
   <dependencies>
     <dependency>
       <groupId>postgresql</groupId>
@@ -168,9 +134,9 @@
   </pluginRepositories>
   <properties>
     <jetty.version>6.1.4</jetty.version>
-    <database.username>postgres</database.username>
-    <database.password>postgres</database.password>
     <database.driver>org.postgresql.Driver</database.driver>
     <database.uri>jdbc:postgresql://localhost:5432/jiemamy</database.uri>
+    <database.username>postgres</database.username>
+    <database.password>postgres</database.password>
   </properties>
 </project>
