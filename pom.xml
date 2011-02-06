@@ -119,18 +119,6 @@
       </build>
     </profile>
   </profiles>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jiemamy release</id>
-      <name>Jiemamy Repository</name>
-      <url>http://maven.jiemamy.org/release</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>jiemamy-snapshot</id>
-      <name>Jiemamy Snapshot Repository</name>
-      <url>http://maven.jiemamy.org/snapshot</url>
-    </pluginRepository>
-  </pluginRepositories>
   <dependencies>
     <dependency>
       <groupId>postgresql</groupId>
@@ -162,14 +150,27 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jiemamy-release</id>
+      <name>Jiemamy Repository</name>
+      <url>http://maven.jiemamy.org/release</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>jiemamy-snapshot</id>
+      <name>Jiemamy Snapshot Repository</name>
+      <url>http://maven.jiemamy.org/snapshot</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
   <properties>
     <jetty.version>6.1.4</jetty.version>
-    <database.username>jiemamy01</database.username>
-    <database.password>`eC_W.1X</database.password>
+    <database.username>postgres</database.username>
+    <database.password>postgres</database.password>
     <database.driver>org.postgresql.Driver</database.driver>
-    <database.uri>jdbc:postgresql://griffon.jiemamy.org:5432/jiemamy01</database.uri>
-    <!--
     <database.uri>jdbc:postgresql://localhost:5432/jiemamy</database.uri>
-    -->
   </properties>
 </project>
