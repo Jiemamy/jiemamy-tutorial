@@ -62,14 +62,6 @@
             <overwrite>true</overwrite>
           </parameter>
         </configuration>
-        <executions>
-          <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>export</goal>
-            </goals>
-          </execution>
-        </executions>
         <dependencies>
           <dependency>
             <groupId>org.jiemamy</groupId>
@@ -85,6 +77,29 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>maintenanceDb</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jiemamy</groupId>
+            <artifactId>maven-jiemamy-plugin</artifactId>
+            <version>${project.version}</version>
+            <executions>
+              <execution>
+                <phase>generate-resources</phase>
+                <goals>
+                  <goal>clean</goal>
+                  <goal>execute</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
   <dependencies>
     <dependency>
       <groupId>postgresql</groupId>
