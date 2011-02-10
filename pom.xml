@@ -133,12 +133,12 @@
   </dependencies>
   <pluginRepositories>
     <pluginRepository>
-      <id>jiemamy-release</id>
+      <id>jiemamy.org-release</id>
       <name>Jiemamy Repository</name>
       <url>http://maven.jiemamy.org/release</url>
     </pluginRepository>
     <pluginRepository>
-      <id>jiemamy-snapshot</id>
+      <id>jiemamy.org-snapshot</id>
       <name>Jiemamy Snapshot Repository</name>
       <url>http://maven.jiemamy.org/snapshot</url>
       <snapshots>
