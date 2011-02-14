@@ -1,49 +1,55 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jiemamy xmlns="http://jiemamy.org/xml/ns/core" version="0.3">
   <metadata class="org.jiemamy.SimpleJmMetadata">
-    <dialect>org.jiemamy.dialect.postgresql.PostgresqlDialect</dialect>
+    <dialect>org.jiemamy.dialect.postgresql.PostgreSqlDialect</dialect>
     <schemaName/>
     <description/>
   </metadata>
   <dbobjects>
-    <table id="0687b1cc-424c-4c05-8173-b8ce53484bcf" class="org.jiemamy.model.table.SimpleJmTable">
+    <table id="0687b1cc-424c-4c05-8173-b8ce53484bcf">
       <name>T_ITEM</name>
       <logicalName/>
       <description/>
       <columns>
-        <column id="da448863-5585-4bed-98b5-89234269495d" class="org.jiemamy.model.column.SimpleJmColumn">
+        <column id="da448863-5585-4bed-98b5-89234269495d">
           <name>ID</name>
           <logicalName/>
           <description/>
-          <dataType class="org.jiemamy.model.datatype.SimpleDataType">
-            <typeCategory>INTEGER</typeCategory>
-            <typeName>INTEGER</typeName>
+          <dataType>
+            <typeDesc>
+              <typeCategory>INTEGER</typeCategory>
+              <typeName>INTEGER</typeName>
+            </typeDesc>
             <parameters>
               <parameter key="serial">true</parameter>
             </parameters>
           </dataType>
           <defaultValue/>
         </column>
-        <column id="f83ee0be-27ea-4c25-aff5-36b60185eaea" class="org.jiemamy.model.column.SimpleJmColumn">
+        <column id="f83ee0be-27ea-4c25-aff5-36b60185eaea">
           <name>ITEM_NAME</name>
           <logicalName/>
           <description/>
-          <dataType class="org.jiemamy.model.datatype.SimpleDataType">
-            <typeCategory>VARCHAR</typeCategory>
-            <typeName>VARCHAR</typeName>
+          <dataType>
+            <typeDesc>
+              <typeCategory>VARCHAR</typeCategory>
+              <typeName>VARCHAR</typeName>
+            </typeDesc>
             <parameters>
               <parameter key="size">64</parameter>
             </parameters>
           </dataType>
           <defaultValue/>
         </column>
-        <column id="5aef45b3-891c-4560-83d2-a6adb98617e9" class="org.jiemamy.model.column.SimpleJmColumn">
+        <column id="5aef45b3-891c-4560-83d2-a6adb98617e9">
           <name>PRICE</name>
           <logicalName/>
           <description/>
-          <dataType class="org.jiemamy.model.datatype.SimpleDataType">
-            <typeCategory>INTEGER</typeCategory>
-            <typeName>INTEGER</typeName>
+          <dataType>
+            <typeDesc>
+              <typeCategory>INTEGER</typeCategory>
+              <typeName>INTEGER</typeName>
+            </typeDesc>
             <parameters>
               <parameter key="serial">false</parameter>
             </parameters>

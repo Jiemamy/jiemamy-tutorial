@@ -38,7 +38,7 @@
         <!--   jiemamyゴール = データファイルからSQLを生成する -->
         <groupId>org.jiemamy</groupId>
         <artifactId>maven-jiemamy-plugin</artifactId>
-        <version>${project.version}</version>
+        <version>0.3.0</version>
         <configuration>
           <!-- 共通設定 -->
           <driver>${database.driver}</driver>
@@ -52,7 +52,7 @@
           <emitCreateSchemaStatement>false</emitCreateSchemaStatement>
           <dataSetIndex>0</dataSetIndex>
           <!-- jiemamy:import用設定 -->
-          <dialect>org.jiemamy.dialect.postgresql.PostgresqlDialect</dialect>
+          <dialect>org.jiemamy.dialect.postgresql.PostgreSqlDialect</dialect>
           <!-- jiemamy:export用設定 -->
           <parameter>
             <emitDropStatements>false</emitDropStatements>
@@ -66,7 +66,7 @@
           <dependency>
             <groupId>org.jiemamy</groupId>
             <artifactId>jiemamy-dialect-postgresql</artifactId>
-            <version>${project.version}</version>
+            <version>0.3.0</version>
           </dependency>
           <dependency>
             <groupId>postgresql</groupId>
@@ -85,7 +85,7 @@
           <plugin>
             <groupId>org.jiemamy</groupId>
             <artifactId>maven-jiemamy-plugin</artifactId>
-            <version>${project.version}</version>
+            <version>0.3.0</version>
             <executions>
               <execution>
                 <phase>generate-resources</phase>
@@ -136,15 +136,6 @@
       <id>jiemamy.org-release</id>
       <name>Jiemamy Repository</name>
       <url>http://maven.jiemamy.org/release</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>jiemamy.org-snapshot</id>
-      <name>Jiemamy Snapshot Repository</name>
-      <url>http://maven.jiemamy.org/snapshot</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
     </pluginRepository>
   </pluginRepositories>
   <properties>
