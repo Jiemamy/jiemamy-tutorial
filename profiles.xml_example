@@ -1,0 +1,16 @@
+<profilesXml>
+  <profiles>
+    <profile>
+      <id>jiemamy-demo</id>
+      <properties>
+        <database.username>postgres</database.username>
+        <database.password>postgres</database.password>
+        <database.driver>org.postgresql.Driver</database.driver>
+        <database.uri>jdbc:postgresql://localhost:5432/jiemamy</database.uri>
+      </properties>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>jiemamy-demo</activeProfile>
+  </activeProfiles>
+</profilesXml>
